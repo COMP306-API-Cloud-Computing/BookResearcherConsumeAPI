@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const BookList = ({ books }) => {
@@ -9,10 +10,11 @@ const BookList = ({ books }) => {
           {books.map((book, index) => (
             <li key={index}>
               <h3>{book.title}</h3>
-              {/* Assuming you have author's name in the book object, adjust as necessary */}
-              <p>Author: {book.AuthorName}</p>
               <p>ISBN: {book.isbn}</p>
-              {/* Add more details as needed */}
+              <p>Author: {book.authorName}</p>
+              {book.availability && book.availability.map((avail, idx) => (
+                <p key={idx}>Available at: {avail.libraryName} (Quantity: {avail.quantity})</p>
+              ))}
             </li>
           ))}
         </ul>

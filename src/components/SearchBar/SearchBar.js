@@ -1,3 +1,5 @@
+// SearchBar.js
+
 import React, { useState } from 'react';
 
 const SearchBar = ({ onSearch }) => {
@@ -8,9 +10,8 @@ const SearchBar = ({ onSearch }) => {
   };
 
   const handleFormSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    onSearch(searchTerm);  // Call the onSearch function passed from the parent component with the current search term
-    setSearchTerm('');     // Optionally reset the search term
+    event.preventDefault();
+    onSearch(searchTerm);
   };
 
   return (
