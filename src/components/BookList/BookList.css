@@ -1,0 +1,43 @@
+/* BookList.css */
+
+
+  
+  .search-results-title {
+    /* Styles for the search results title */
+    margin-bottom: 20px;
+  }
+  
+  .book-list {
+    /* Styles for the book list */
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .book-item {
+    /* Styles for each book item */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .book-title {
+    /* Styles for the book title */
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .book-isbn, .book-author, .book-availability {
+    /* Shared styles for ISBN, author, and availability */
+    margin-bottom: 5px;
+  }
+  
+  .no-books-message {
+    /* Styles for the no books message */
+    color: #888;
+  }
+  
+  /* Add any additional styles you need */
+  

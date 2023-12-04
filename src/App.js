@@ -2,12 +2,27 @@ import React, { useState } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import BookList from './components/BookList';
+import AddBookForm from './components/AddBookForm';
 import { booksApi, authorsApi, librariesApi, bookAuthorsApi, bookAvailabilityApi } from './api/ApiService';
 
 function App() {
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  // Function to add a new book
+  const handleBookAddition = async (bookData) => {
+    setIsLoading(true);
+    try {
+      const addedBook = await booksApi.createBook(bookData); // Assuming createBook is a named export from booksApi
+      setBooks([...books, addedBook]); // Add the new book to the local state
+      // Optionally, clear the search field or handle the UI response here
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleSearch = async (searchQuery) => {
     setIsLoading(true);
@@ -59,9 +74,15 @@ function App() {
         {!books.length && <p>Are you looking for books?</p>}
       </header>
       <main className="App-content">
+      <div className="book-list">
+        <BookList books={books} />
+        </div>
+      
         {isLoading && <p>Loading...</p>}
         {error && <p className="error">{error}</p>}
-        {books.length > 0 && <BookList books={books} />}
+        <div className="add-book-form">
+        <AddBookForm onAddBook={handleBookAddition} />
+        </div>
       </main>
     </div>
   );

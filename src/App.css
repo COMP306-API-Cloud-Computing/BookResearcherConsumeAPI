@@ -1,49 +1,44 @@
+/* App.css - Overall Application Styling */
+
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "booklist addbookform";
+  grid-template-columns: 3fr 1fr; /* Adjust the ratio as desired */
+  gap: 20px; /* Adds space between columns */
+  margin: 20px; /* Adds margin to the whole app */
 }
 
 .App-header {
+  grid-area: header;
   background-color: #282c34;
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
   padding: 20px;
+  text-align: center;
 }
 
 .App-content {
+  display: contents; /* This makes the children (.book-list and .add-book-form) participate in the grid */
+}
+
+/* Search bar and Add Book form are implicitly placed in the grid based on their order in the HTML */
+
+/* BookList Styling */
+.book-list {
+  grid-area: booklist; /* Assigns the booklist to the proper area */
+  /* Add your styles for the book list here */
+}
+
+/* AddBookForm Styling */
+.add-book-form {
+  grid-area: addbookform; /* Assigns the addbookform to the proper area */
+  /* Add your styles for the add book form here */
+  border: 1px solid #ccc;
   padding: 20px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  margin-right: 10px;
-  width: 300px;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.error {
-  color: red;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  text-align: left;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
   border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* Rest of your existing styles... */

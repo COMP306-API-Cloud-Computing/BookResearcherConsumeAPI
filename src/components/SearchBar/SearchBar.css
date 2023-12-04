@@ -1,0 +1,30 @@
+/* SearchBar.css */
+
+.search-bar-container {
+    display: flex; /* This will align children elements in a row */
+    justify-content: center; /* This centers the search bar container */
+    align-items: center; /* This aligns items vertically in the center */
+    gap: 10px; /* Adjust the space between the input and the button */
+    margin: 20px 0; /* Gives some space above and below the search bar */
+  }
+  
+  .search-input {
+    flex-grow: 1; /* Allows the input to grow and fill the space */
+    padding: 12px 20px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px; /* Rounded corners on the left side */
+  }
+  
+  .search-button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
+    cursor: pointer;
+  }
+  
+  /* If you have any other styles applied directly to the button or input, you might need to adjust them accordingly */
+  
